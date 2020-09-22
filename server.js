@@ -1,8 +1,13 @@
 const express = require("express");
+const connectDB = require("./config/db");
 
 /** Initialize the app */
 
 const app = express();
+
+/** Connect to the database */
+
+connectDB();
 
 /** Define the routes for the application */
 

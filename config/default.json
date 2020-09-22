@@ -1,0 +1,3 @@
+{
+  "mongoURI": "mongodb+srv://anisiomandlate:anisiomandlate123@keeper.coxaq.mongodb.net/<dbname>?retryWrites=true&w=majority"
+}
