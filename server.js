@@ -9,6 +9,9 @@ const app = express();
 
 connectDB();
 
+/** Middleware */
+app.use(express.json({ extended: false }));
+
 /** Define the routes for the application */
 
 app.get("/", (req, res) => res.json({ msg: "Welcome to the API" }));
