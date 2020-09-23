@@ -16,7 +16,7 @@ router.get("/", auth, async (req, res) => {
     });
     res.json(contacts);
   } catch (error) {
-    console.error(errror.message);
+    console.error(error.message);
     res.status(500).send("Server Error");
   }
 });
@@ -46,7 +46,7 @@ router.post(
       const contact = await newContact.save();
       res.json(contact);
     } catch (error) {
-      console.error(errror.message);
+      console.error(error.message);
       res.status(500).send("Server Error");
     }
   }
@@ -89,7 +89,7 @@ router.put("/:id", auth, async (req, res) => {
 
     res.json(contact);
   } catch (error) {
-    console.error(errror.message);
+    console.error(error.message);
     res.status(500).send("Server Error");
   }
 });
@@ -97,8 +97,26 @@ router.put("/:id", auth, async (req, res) => {
 /**@route   DELETE api/contacts/:id */
 /**@desc    Delete contact */
 /**@access  Private */
-router.delete("/:id", (req, res) => {
-  res.send("Delete contact");
+router.delete("/:id", auth, async (req, res) => {
+  try {
+    let contact = await Contact.findById(req.params.id);
+
+    /** Check if the contact exists*/
+
+    if (!contact) return res.status(400).json({ msg: "Contact not found" });
+
+    /** Update the contact based on the logged in user */
+    if (contact.user.toString() !== req.user.id) {
+      return res.status(401).json({ msg: "User not authorized" });
+    }
+
+    await Contact.findByIdAndRemove(req.params.id);
+
+    res.json({ msg: "Contact deleted" });
+  } catch (error) {
+    console.error(error.message);
+    res.status(500).send("Server Error");
+  }
 });
 
 module.exports = router;
