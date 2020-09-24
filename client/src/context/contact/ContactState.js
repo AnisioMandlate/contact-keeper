@@ -11,3 +11,60 @@ import {
   FILTER_CONTACTS,
   CLEAR_FILTER,
 } from "../types";
+
+const ContactState = (props) => {
+  const initialState = {
+    contacts: [
+      {
+        id: 1,
+        name: "Jill Johnson",
+        email: "jill@gmail.com",
+        phone: "555-555-5555",
+        type: "personal",
+      },
+      {
+        id: 2,
+        name: "Sara Watson",
+        email: "sara@gmail.com",
+        phone: "115-555-5555",
+        type: "personal",
+      },
+      {
+        id: 3,
+        name: "Harry White",
+        email: "harry@gmail.com",
+        phone: "333-555-5555",
+        type: "professional",
+      },
+    ],
+  };
+  /** Pull out and dispatch the state from the reducer */
+
+  const [state, dispatch] = useReducer(contactReducer, initialState);
+
+  /** Add contact */
+
+  /** Delete contact */
+
+  /** Set current contact */
+
+  /** Clear current contact */
+
+  /** Update contact */
+
+  /** Filter contact */
+
+  /** Clear filter */
+
+  return (
+    <ContactContex.Provider
+      value={{
+        contacts: state.contacts,
+      }}
+    >
+      {props.children}
+    </ContactContex.Provider>
+  );
+};
+
+export default ContactState;
