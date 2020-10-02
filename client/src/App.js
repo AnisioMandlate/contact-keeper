@@ -1,11 +1,11 @@
 import React, { Fragment } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from "./components/Layout/Navbar";
-import Alerts from "./components/Layout/Alerts";
 import Home from "./components/pages/Home";
 import About from "./components/pages/About";
 import Register from "./components/Auth/Register";
 import Login from "./components/Auth/Login";
+import Alerts from "./components/Layout/Alerts";
 import ContactState from "./context/contact/ContactState";
 import AuthState from "./context/auth/AuthState";
 import AlertState from "./context/alert/AlertState";
