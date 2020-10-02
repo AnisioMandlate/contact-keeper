@@ -7,6 +7,7 @@
   --light-color: #f4f4f4;
   --danger-color: #dc3545;
   --success-color: #28a745;
+  --info-color: #17a2b8;
 }
 
 * {
@@ -243,6 +244,12 @@ img {
 
 .bg-primary {
   border-radius: 0;
+}
+
+.alert-info {
+  background: var(--info-color);
+  color: #fff;
+  border-radius: 8px;
 }
 
 .btn-light,
