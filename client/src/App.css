@@ -229,6 +229,7 @@ img {
   opacity: 0.9;
   background: var(--light-color);
   color: #333;
+  border-radius: 8px;
 }
 
 .btn-primary,
@@ -237,6 +238,11 @@ img {
 .alert-primary {
   background: var(--primary-color);
   color: #fff;
+  border-radius: 8px;
+}
+
+.bg-primary {
+  border-radius: 0;
 }
 
 .btn-light,
@@ -245,6 +251,7 @@ img {
 .alert-light {
   background: var(--light-color);
   color: #333;
+  border-radius: 8px;
 }
 
 .btn-dark,
@@ -253,6 +260,7 @@ img {
 .alert-dark {
   background: var(--dark-color);
   color: #fff;
+  border-radius: 8px;
 }
 
 .btn-danger,
@@ -261,6 +269,7 @@ img {
 .alert-danger {
   background: var(--danger-color);
   color: #fff;
+  border-radius: 8px;
 }
 
 .btn-success,
@@ -269,6 +278,7 @@ img {
 .alert-success {
   background: var(--success-color);
   color: #fff;
+  border-radius: 8px;
 }
 
 .btn-white,
@@ -278,6 +288,7 @@ img {
   background: #fff;
   color: #333;
   border: #ccc solid 1px;
+  border-radius: 8px;
 }
 
 .btn:hover {
